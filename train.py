@@ -188,7 +188,7 @@ if __name__ == '__main__':
     train_losses = []
     test_losses = []
 
-    for epoch in range(start_epoch + 1, start_epoch + 1 + 300):
+    for epoch in range(start_epoch + 1, start_epoch + 1 + 200):
         train_acc, train_loss = train(net, epoch)
         test_acc, test_loss = test_during_training(net, epoch)
         train_accuracies.append(train_acc)
