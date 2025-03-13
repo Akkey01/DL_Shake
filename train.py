@@ -181,14 +181,14 @@ if __name__ == '__main__':
 
     criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
     optimizer = optim.SGD(net.parameters(), lr=args.lr, momentum=0.9, weight_decay=5e-4)
-    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+    scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=250)
 
     train_accuracies = []
     test_accuracies = []
     train_losses = []
     test_losses = []
 
-    for epoch in range(start_epoch + 1, start_epoch + 1 + 200):
+    for epoch in range(start_epoch + 1, start_epoch + 1 + 250):
         train_acc, train_loss = train(net, epoch)
         test_acc, test_loss = test_during_training(net, epoch)
         train_accuracies.append(train_acc)
